@@ -1,4 +1,7 @@
+import matter from "gray-matter";
+
 const HomePage = (props) => {
+ 
   console.log(props);
   return (
     <div>
@@ -11,17 +14,20 @@ const HomePage = (props) => {
 
 
 export const getStaticProcs = async () => {
-const directory= `${process.cwd()}/content`;
-const filenames = fs.readdirSync(directory);
-const products = filenames.map(filename => {
-  const fileContent=fs.readFileSync(`${directory}/${filename}`).toString();
- console.log(fileContent);
-  return{
-
-  }
-})
+  console.log("ok");
+  const directory = `${process.cwd()}/content`;
+  const filenames = fs.readdirSync(directory);
+  const products = filenames.map(filename => {
+    const fileContent = fs.readFileSync(`${directory}/${filename}`).toString();
+    const { data } = matter(fileContent);
+    const slug = `/products/${filename.replace('.md','')}`;
+    return {
+      ...data,
+      slug
+    }
+  });
   return {
-    props: {ok:"ok"}
+    props: { products  }
   }
 
 }
