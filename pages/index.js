@@ -1,13 +1,17 @@
 import matter from "gray-matter";
 import Link from "next/link";
 import fs from "fs";
+import styled from "styled-components";
+
+
+const Container=styled.div`
+
+`
 
 const HomePage = (props) => {
-
-  console.log(props);
    return props.products.map(product => {
     return (
-      <div>
+      <Container>
         <Link href={product.slug}>
           <a>
             <h1>{product.name}</h1>
@@ -15,7 +19,7 @@ const HomePage = (props) => {
         </Link>
         <p>{product.description}</p>
         <p>{product.price} €</p>
-      </div>
+      </Container>
     )
   }) 
 }
@@ -35,7 +39,6 @@ export const getStaticProps = async () => {
       slug
     }
   });
-  console.log(products);
   return {
     props: {
     products
