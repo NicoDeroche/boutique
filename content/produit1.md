@@ -1,4 +1,5 @@
 ---
+id: 1
 name: Produit 1
 description: pratique et à un prix imbattable
 price: 30

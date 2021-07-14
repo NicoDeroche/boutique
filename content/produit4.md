@@ -1,4 +1,5 @@
 ---
+id: 4
 name: Produit 4
 description:  un accessoire indispensable pour toutes les personnes qui ont bon goût
 price: 10

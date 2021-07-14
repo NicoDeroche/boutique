@@ -1,4 +1,5 @@
 ---
+id: 5
 name: Produit 5
 description: exclusivité Internet 
 price: 80

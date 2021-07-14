@@ -1,4 +1,5 @@
 ---
+id: 3
 name: Produit 3
 description: notre best-seller
 price: 120

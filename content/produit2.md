@@ -1,4 +1,5 @@
 ---
+id: 2
 name: Produit 2
 description: fabrication Française
 price: 130
