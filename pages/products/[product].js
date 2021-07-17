@@ -2,12 +2,8 @@ import fs from "fs";
 import matter from "gray-matter";
 import marked from "marked";
 import styled from "styled-components";
+import Page from "../../components/styled/Page"
 
-const Container = styled.div`
-background:white;
-padding: 1rem 2rem;
-margin: 1rem 0rem;
-`;
 
 
 const Title = styled.div`
@@ -36,7 +32,7 @@ display:inline-block;
 const Product = ({ product: { data, content } }) => {
     const html = marked(content);
     return (
-        <Container>
+        <Page>
             <Title>
             <h1>{data.name}</h1>
             <SubTitle>{data.description}</SubTitle>
@@ -44,7 +40,7 @@ const Product = ({ product: { data, content } }) => {
             </Title>
             <Price>{data.price} €</Price>
             <div dangerouslySetInnerHTML={{ __html: html }} />
-        </Container>
+        </Page>
     )
 }
 

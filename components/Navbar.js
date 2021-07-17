@@ -36,7 +36,7 @@ const {openCart} = useCart();
         <Nav>
             <NavContainer>
                 <Link href="/">
-                    <UnstyledLink>Accueil</UnstyledLink>
+                    <UnstyledLink>La boutique de Nicolas</UnstyledLink>
                 </Link>
                 <ShoppingCart onClick={handleClick} />
             </NavContainer>
