@@ -5,7 +5,6 @@ import styled from "styled-components";
 import UnstyledLink from "../components/styled/UnstyledLink";
 import useCart from "../hooks/useCart";
 
-
 const Container = styled.div`
 background-color : white;
 padding:1rem 2rem;
@@ -31,11 +30,12 @@ right : 1rem;;
 font-size:2.5rem;
 `;
 
-const renderProduct = (product,addItemToCart) => {
-const handleClick = (e) => {
-  e.stopPropagation();
-  addItemToCart(product.id);
-}
+const renderProduct = (product, addItemToCart) => {
+  
+  const handleClick = (e) => {
+    e.stopPropagation();
+    addItemToCart(product);
+  }
   return (
     <Link key={product.id} href={product.slug}>
       <UnstyledLink>
@@ -53,13 +53,13 @@ const handleClick = (e) => {
 
 
 const HomePage = (props) => {
-  const {cart,addItemToCart} = useCart();
+  const {  addItemToCart } = useCart();
 
   return (
 
     <ProductsContainer>
       {
-        props.products.map(product=>renderProduct(product,addItemToCart))
+        props.products.map(product => renderProduct(product, addItemToCart))
       }
 
     </ProductsContainer>
