@@ -1,7 +1,7 @@
 import Page from "../components/styled/Page";
 import useCart from "../hooks/useCart";
 import styled from "styled-components";
-
+import axios from "axios";
 
 const Item = styled.li`
 list-style:none;
@@ -40,8 +40,10 @@ color:white;
 
 const Checkout = () => {
     const { cart,total } = useCart();
-    const processPayment = () => {
-        console.log("process payment");
+    const processPayment = async () => {
+      const newCart=  cart.map(({id,qty})=>({id,qty}));
+        const url='/.netlify/functions/charge-card';
+        const {data} = await axios.post(url, {cart:newCart});
     }
  
     return (
