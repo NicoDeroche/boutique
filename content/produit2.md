@@ -2,7 +2,7 @@
 id: 2
 name: Produit 2
 description: fabrication Française
-price: 130
+price: 130.60
 ---
 
 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla sodales elit elit, a luctus diam dignissim volutpat. Donec in tortor eros. Ut porttitor sed augue in lacinia. Sed at leo purus. Nunc pharetra nec velit quis ornare. Proin ullamcorper ligula ac ultricies dignissim. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Nam blandit bibendum dui eget maximus. Phasellus gravida odio ut rutrum fermentum. Donec fermentum at metus condimentum volutpat. Curabitur auctor dolor sed maximus rhoncus. Nunc iaculis bibendum felis vitae maximus.

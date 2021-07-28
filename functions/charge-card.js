@@ -1,23 +1,9 @@
-const fs = require("fs");
-const matter = require("gray-matter");
 const stripe=require("stripe")(process.env.STRIPE_SECRET_KEY);
+const products=require('./products.json');
 
-const getProducts = () => {
-    const directory = `${process.cwd()}/content`;
-    const filenames = fs.readdirSync(directory);
-    return filenames.map(filename => {
-        const fileContent = fs.readFileSync(`${directory}/${filename}`).toString();
-        const { data } = matter(fileContent);
-        return data;
-    });
-
-
-}
 
 exports.handler = async (event, context) => {
     const { cart } = JSON.parse(event.body);
-  
-    const products = getProducts();
 
     const cartWithProducts = cart.map(({ id, qty }) => {
         const product = products.find(p => p.id === id);
@@ -33,7 +19,7 @@ exports.handler = async (event, context) => {
       product_data:{
           name:product.name
       },
-      unit_amount:product.price,
+      unit_amount:product.price*100,
   },
   quantity:product.qty
   }));

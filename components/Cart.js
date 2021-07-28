@@ -91,7 +91,7 @@ const Cart = () => {
                 <X onClick={handleClick} />
             </XContainer>
             <Content>
-                <Title>Cart</Title>
+                <Title>Panier</Title>
                 {cart.length > 0 ? (
                     <>
                         <Ul>
